@@ -4,13 +4,18 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public Maze mazePrefab;
+	public UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController playerPrefab;
+
 	private Maze mazeInstance;
+	private UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController playerInstance;
+
 
 
 
 
 	private void Start () {
-		BeginGame();
+		StartCoroutine(BeginGame());
+
 	}
 	
 	private void Update () {
@@ -19,13 +24,22 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	private void BeginGame() {
+	private IEnumerator BeginGame() {
 		mazeInstance = Instantiate(mazePrefab) as Maze;
-		mazeInstance.Generate();
+		yield return StartCoroutine (mazeInstance.Generate ());
+		playerInstance = Instantiate (playerPrefab) as UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController;
+		playerInstance.SetLocation (mazeInstance.GetCell (mazeInstance.RandomCoordinates));
 	}
 
 	private void RestartGame() {
+		StopAllCoroutines ();
 		Destroy(mazeInstance.gameObject);
-		BeginGame();
+
+		if(playerInstance != null) {
+
+			Destroy (playerInstance.gameObject);
+		}
+		StartCoroutine(BeginGame());
 	}
+
 }
