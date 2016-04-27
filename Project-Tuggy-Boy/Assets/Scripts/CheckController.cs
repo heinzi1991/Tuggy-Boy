@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CheckController : MonoBehaviour {
 
@@ -10,19 +11,18 @@ public class CheckController : MonoBehaviour {
 
 			Debug.Log ("No Controller");
 			//WaitForSeconds (10);
-			Application.Quit();
+			//Application.Quit();
 		}
 	
 	}
 	
 	// Update is called once per frame
-	/*void Update () {
+	void Update () {
 
+		if (Input.GetKeyDown(KeyCode.N)) {
 
-		if (Input.GetJoystickNames().Length == 0) {
-
-			Debug.Log("Please plug your Controller again.");
+			SceneManager.LoadScene("testscene");
 		}
 	
-	}*/
+	}
 }
