@@ -9,7 +9,7 @@ public class TuggyBoy : MonoBehaviour {
 
 		gameObject.transform.Translate(MovingDirection * Time.smoothDeltaTime);
 
-		if (gameObject.transform.position.y > 3) {
+		if (gameObject.transform.position.y > 1) {
 
 			MovingDirection = Vector3.down;
 		}
