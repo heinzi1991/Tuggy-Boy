@@ -21,11 +21,6 @@ public class Maze : MonoBehaviour {
 	public MazeCell[,] cells;
 	private List<MazeRoom> rooms = new List<MazeRoom> ();
 
-
-
-
-
-
 	//Functions
 	public MazeCell GetCell (IntVector2 coordinates) {
 
@@ -107,7 +102,6 @@ public class Maze : MonoBehaviour {
 	public IntVector2 RandomCoordinates {
 		
 		get {
-			
 			return new IntVector2(Random.Range(0, size.x), Random.Range(0, size.z));
 		}
 	}
