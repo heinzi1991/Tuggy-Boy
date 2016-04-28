@@ -18,7 +18,7 @@ public class Maze : MonoBehaviour {
 	public float doorFrameProbability;
 	public MazeRoomSettings[] roomSettings;
 
-	private MazeCell[,] cells;
+	public MazeCell[,] cells;
 	private List<MazeRoom> rooms = new List<MazeRoom> ();
 
 
