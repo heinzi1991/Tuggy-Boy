@@ -4,13 +4,10 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public Maze mazePrefab;
-	public LoadScript loadScript;
 	public UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController playerPrefab;
 
 	private Maze mazeInstance;
 	private UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController playerInstance;
-
-	private int cellLoad = 0;
 
 
 
@@ -18,17 +15,12 @@ public class GameManager : MonoBehaviour {
 
 	private void Start () {
 		StartCoroutine(BeginGame());
-
-		loadScript.loadScore = cellLoad;
-
 	}
 	
 	private void Update () {
 		if(Input.GetKeyDown(KeyCode.Space)) {
 			RestartGame();
 		}
-
-		loadScript.loadScore = cellLoad;
 	}
 
 	private IEnumerator BeginGame() {
@@ -49,5 +41,6 @@ public class GameManager : MonoBehaviour {
 		}
 		Camera.main.enabled = true;
 		StartCoroutine(BeginGame());
+		//BeginGame ();
 	}
 }

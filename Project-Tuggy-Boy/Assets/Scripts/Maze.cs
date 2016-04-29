@@ -21,6 +21,7 @@ public class Maze : MonoBehaviour {
 	public MazeCell[,] cells;
 	private List<MazeRoom> rooms = new List<MazeRoom> ();
 
+
 	//Functions
 	public MazeCell GetCell (IntVector2 coordinates) {
 
@@ -56,6 +57,7 @@ public class Maze : MonoBehaviour {
 		if(currentCell.IsFullyInitialized) {
 
 			activeCells.RemoveAt (currentIndex);
+
 			return;
 		}
 
@@ -171,5 +173,4 @@ public class Maze : MonoBehaviour {
 		rooms.Add (newRoom);
 		return newRoom;
 	}
-
 }
