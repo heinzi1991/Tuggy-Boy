@@ -88,8 +88,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_YRotation;
         private Vector3 m_GroundContactNormal;
         private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
-		private MazeCell currentCell;
-
 
 
         public Vector3 Velocity
@@ -263,11 +261,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_Jumping = false;
             }
         }
-
-		public void SetLocation(MazeCell cell) {
-
-			currentCell = cell;
-			transform.localPosition = cell.transform.localPosition;
-		}
     }
 }
