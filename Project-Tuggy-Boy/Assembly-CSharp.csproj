@@ -48,10 +48,12 @@
      <Compile Include="Assets\3D maze generator\mazeTools.cs" />
      <Compile Include="Assets\3D maze generator\maze_generation.cs" />
      <Compile Include="Assets\Scripts\CheckController.cs" />
+     <Compile Include="Assets\Scripts\DestroyCollectObject.cs" />
      <Compile Include="Assets\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Scripts\IntVector2.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\OnCollision.cs" />
      <Compile Include="Assets\Scripts\RigidbodyFirstPersonController.cs" />
      <Compile Include="Assets\Scripts\TuggyBoy.cs" />
      <None Include="Assets\3D maze generator\Read me.txt" />
