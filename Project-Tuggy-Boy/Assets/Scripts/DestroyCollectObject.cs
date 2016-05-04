@@ -7,7 +7,6 @@ public class DestroyCollectObject : MonoBehaviour {
 
 		if(col.gameObject.name == "CollectObject") {
 
-			Debug.Log ("HELLO");
 			Destroy (col.gameObject);
 		}
 	}
