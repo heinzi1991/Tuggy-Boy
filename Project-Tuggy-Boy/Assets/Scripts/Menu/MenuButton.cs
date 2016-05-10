@@ -78,8 +78,15 @@ namespace VRStandardAssets.Menu
             // Wait for the camera to fade out.
             yield return StartCoroutine(m_CameraFade.BeginFadeOut(true));
 
-            // Load the level.
-            SceneManager.LoadScene(m_SceneToLoad, LoadSceneMode.Single);
+			if (m_SceneToLoad == "exit") {
+
+				Application.Quit();
+			}
+			else {
+
+				// Load the level.
+				SceneManager.LoadScene(m_SceneToLoad, LoadSceneMode.Single);
+			}
         }
     }
 }
