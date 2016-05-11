@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Utils\UITint.cs" />
      <Compile Include="Assets\Scripts\Utils\VRCameraFade.cs" />
      <Compile Include="Assets\Scripts\Utils\VRCameraUI.cs" />
+     <Compile Include="Assets\Scripts\Utils\VRGui.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRDeviceManager.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VREyeRaycaster.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRFPSCounter.cs" />
