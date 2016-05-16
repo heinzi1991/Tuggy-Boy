@@ -10,9 +10,9 @@ public class DestroyCollectObject : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col) {
 
-		if(col.gameObject.name == "CollectObject") {
+		if(col.gameObject.tag == "CollectObject") {
 
-			Instantiate(particle, new Vector3(transform.position.x, 1, transform.position.z + 1), particle.transform.rotation);
+			Instantiate(particle, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), particle.transform.rotation);
 			Destroy (col.gameObject);
 			destroy++;
 		}
