@@ -31,6 +31,6 @@ public class GameManager : MonoBehaviour {
 
 			SceneManager.LoadScene ("Start Menu");
 		}
-	
+
 	}
 }
