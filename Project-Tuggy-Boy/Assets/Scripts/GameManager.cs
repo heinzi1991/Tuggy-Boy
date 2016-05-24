@@ -11,20 +11,20 @@ public class GameManager : MonoBehaviour {
 	public int collectCount;
 	public GameObject player;
 
-    private Text guiText;
+  private Text collectCounText;
 
 	// Use this for initialization
 	void Start () {
 	
-		guiText = gui.GetComponentInChildren<Text>();
-		guiText.text = "-- / " + collectCount;
+		collectCounText = gui.GetComponentInChildren<Text>();
+		collectCounText.text = "-- / " + collectCount;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		guiText.text = DestroyCollectObject.getDestroy () + " / " + collectCount;
+		collectCounText.text = DestroyCollectObject.getDestroy () + " / " + collectCount;
 
 		if (DestroyCollectObject.getDestroy() == collectCount) {
 
