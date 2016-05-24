@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour {
 	public int collectCount;
 	public GameObject player;
 
-	private Text guiText;
-
+    private Text guiText;
 
 	// Use this for initialization
 	void Start () {
