@@ -12,12 +12,20 @@ public class GameManager : MonoBehaviour {
 	public GameObject player;
 
 	private Text guiText;
+	private Image[] hearts;
+
+	void Awake() {
+		
+		guiText = gui.GetComponentInChildren<Text>();
+		hearts = gui.GetComponentsInChildren<Image>();
+	}
 
 
 	// Use this for initialization
 	void Start () {
-	
-		guiText = gui.GetComponentInChildren<Text>();
+
+		//Debug.Log(hearts);
+
 		guiText.text = "-- / " + collectCount;
 
 	}

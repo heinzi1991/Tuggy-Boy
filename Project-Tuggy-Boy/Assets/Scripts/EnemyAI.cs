@@ -28,16 +28,29 @@ public class EnemyAI : MonoBehaviour {
 		if (DestroyCollectObject.getPowerUp() == false) {
 
 			agent.SetDestination(target.transform.position);
+
+			//Debug.Log(float.IsInfinity(agent.remainingDistance));
+
+			/*if (agent.remainingDistance <= 0.1f) {
+
+				if (!float.IsInfinity(agent.remainingDistance)) {
+
+					Debug.Log("I killed the Player");
+				}
+			}*/
+
 		}
 		else {
 
 			agent.SetDestination(escapePoints[index].transform.position);
-
-			//Debug.Log("Scheiße der Spieler kann mich töten");
 		}
+	}
 
+	void OnTriggerEnter(Collider other) {
 
+		if (other.name == "FPSController") {
 
-
+			Debug.Log("I killed the player!");
+		}
 	}
 }
