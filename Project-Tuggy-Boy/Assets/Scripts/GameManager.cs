@@ -11,32 +11,19 @@ public class GameManager : MonoBehaviour {
 	public int collectCount;
 	public GameObject player;
 
-<<<<<<< HEAD
-	private Text guiText;
+	private Text collectCounText;
 	private Image[] hearts;
 
 	void Awake() {
 		
-		guiText = gui.GetComponentInChildren<Text>();
+		collectCounText = gui.GetComponentInChildren<Text>();
 		hearts = gui.GetComponentsInChildren<Image>();
 	}
-
-
+		
 	// Use this for initialization
 	void Start () {
 
-		//Debug.Log(hearts);
-
-		guiText.text = "-- / " + collectCount;
-=======
-  private Text collectCounText;
-
-	// Use this for initialization
-	void Start () {
-	
-		collectCounText = gui.GetComponentInChildren<Text>();
 		collectCounText.text = "-- / " + collectCount;
->>>>>>> origin/master
 
 	}
 	
