@@ -4,30 +4,37 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Minimap : MonoBehaviour
 {
-    public GameObject map;
-    private Vector3 map_player_position;
-    private Vector3 global_player_position;
+  public GameObject minimap;
+  public GameObject map;
+  public GameObject miniPlayer;
+  private Vector3 player_position_map;
+  private Vector3 player_position_global;
 
 	// Use this for initialization
 	void Start ()
-    {
+  {
 
-    }
+  }
 	
 	// Update is called once per frame
 	void Update ()
+  {
+    // Toggle visibility of the map
+    if (Input.GetKey(KeyCode.M))
     {
-        // Toggle visibility of the map
-        if (Input.GetKey(KeyCode.M))
-        {
-            map.SetActive(true);
-        }
-        else
-        {
-            map.SetActive(false);
-        }
-
-        gameObject.GetComponentInParent<Transform>
-
+      minimap.SetActive(true);
+      miniPlayer.SetActive(true);
     }
+    else
+    {
+      minimap.SetActive(false);
+      miniPlayer.SetActive(false);
+    }
+
+    player_position_global = gameObject.transform.parent.transform.position;
+
+    Vector3 player_position_diff = map.transform.position - player_position_global;
+
+    miniPlayer.transform.localPosition = -player_position_diff;
+  }
 }
