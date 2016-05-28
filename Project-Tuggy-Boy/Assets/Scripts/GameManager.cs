@@ -11,12 +11,18 @@ public class GameManager : MonoBehaviour {
 	public int collectCount;
 	public GameObject player;
 
-  private Text collectCounText;
+	private Text collectCounText;
+	private Image[] hearts;
 
+	void Awake() {
+		
+		collectCounText = gui.GetComponentInChildren<Text>();
+		hearts = gui.GetComponentsInChildren<Image>();
+	}
+		
 	// Use this for initialization
 	void Start () {
-	
-		collectCounText = gui.GetComponentInChildren<Text>();
+
 		collectCounText.text = "-- / " + collectCount;
 
 	}

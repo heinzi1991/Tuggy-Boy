@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Menu\MenuItemPopout.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuSelectorMover.cs" />
      <Compile Include="Assets\Scripts\Menu\ReturnToMainMenu.cs" />
+     <Compile Include="Assets\Scripts\Minimap.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\RigidbodyFirstPersonController.cs" />
      <Compile Include="Assets\Scripts\Utils\InputWarnings.cs" />
@@ -78,6 +79,7 @@
      <Compile Include="Assets\VRStandardAssets\Scripts\VRInput.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRInteractiveItem.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRTrackingReset.cs" />
+     <None Include="Assets\Shaders\Hologram.shader" />
      <None Include="Assets\Shaders\UIOverlay.shader" />
      <None Include="Assets\3D maze generator\Read me.txt" />
      <None Include="Assets\Shaders\SeparableAlpha.shader" />

@@ -15,8 +15,17 @@ public class CollectRotation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		angle += 25 * Time.deltaTime * speed;
-		transform.eulerAngles = new Vector3(0, angle, 0);
-	
+		if (gameObject.tag == "PowerUp") {
+
+			angle += 25 * Time.deltaTime * speed;
+			transform.eulerAngles = new Vector3(30, angle, 0);
+		}
+		else {
+
+			angle += 25 * Time.deltaTime * speed;
+			transform.eulerAngles = new Vector3(0, angle, 0);
+		}
+
+
 	}
 }
