@@ -21,7 +21,7 @@ public class DestroyCollectObject : MonoBehaviour {
 
 		if (col.gameObject.tag == "PowerUp") {
 
-			GameObject clone = (GameObject)Instantiate(collectParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), collectParticle.transform.rotation);
+			GameObject clone = (GameObject)Instantiate(powerUpParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), powerUpParticle.transform.rotation);
 			Destroy (col.gameObject);
 			StartCoroutine(Waiting());
 			Destroy (clone, 3.0f);
@@ -33,6 +33,11 @@ public class DestroyCollectObject : MonoBehaviour {
 		return destroy;
 	}
 
+	public static bool getPowerUp() {
+
+		return powerUp;
+	}
+
 	IEnumerator Waiting() {
 
 		powerUp = true;
@@ -40,8 +45,5 @@ public class DestroyCollectObject : MonoBehaviour {
 		powerUp = false;
 	}
 
-	public static bool getPowerUp() {
 
-		return powerUp;
-	}
 }

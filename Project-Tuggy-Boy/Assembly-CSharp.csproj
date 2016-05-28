@@ -55,7 +55,6 @@
      <Compile Include="Assets\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HeadBob.cs" />
-     <Compile Include="Assets\Scripts\IntVector2.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuAnimator.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuButton.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuItemPopout.cs" />
