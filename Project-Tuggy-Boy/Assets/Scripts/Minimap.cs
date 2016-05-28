@@ -27,7 +27,7 @@ public class Minimap : MonoBehaviour
             map.SetActive(false);
         }
 
-
+        gameObject.GetComponentInParent<Transform>
 
     }
 }
