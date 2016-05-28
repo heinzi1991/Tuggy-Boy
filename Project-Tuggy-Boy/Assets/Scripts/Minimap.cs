@@ -35,7 +35,7 @@ public class Minimap : MonoBehaviour
     int mini_floor_index = Mathf.FloorToInt(player_position_global.y / 3.5f);
 
     // Toggle visibility of the map
-    if (Input.GetKey(KeyCode.M) && mini_floor_index < mini_map_floors.Length)
+		if (Input.GetButton("Fire1") && mini_floor_index < mini_map_floors.Length)
     {
       mini_map_floors[mini_floor_index].SetActive(true);
       miniPlayer.SetActive(true);
