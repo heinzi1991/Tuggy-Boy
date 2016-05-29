@@ -32,10 +32,10 @@ public class Minimap : MonoBehaviour
     miniPlayer.transform.localPosition = -player_position_diff;
 
     // Selet right minimap
-    int mini_floor_index = Mathf.FloorToInt(player_position_global.y / 3.5f);
+    int mini_floor_index = Mathf.FloorToInt(player_position_global.y / 3f);
 
     // Toggle visibility of the map
-		if (Input.GetButton("Fire1") && mini_floor_index < mini_map_floors.Length)
+		if (CrossPlatformInputManager.GetButton("Minimap") && mini_floor_index < mini_map_floors.Length)
     {
       mini_map_floors[mini_floor_index].SetActive(true);
       miniPlayer.SetActive(true);
