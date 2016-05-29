@@ -26,6 +26,8 @@ namespace VRStandardAssets.Utils
         private VRInteractiveItem m_CurrentInteractible;                //The current interactive item
         private VRInteractiveItem m_LastInteractible;                   //The last interactive item
 
+		private static String sliderName;
+
 
         // Utility for other classes to get the current interactive item
         public VRInteractiveItem CurrentInteractible
@@ -75,6 +77,8 @@ namespace VRStandardAssets.Utils
             {
                 VRInteractiveItem interactible = hit.collider.GetComponent<VRInteractiveItem>(); //attempt to get the VRInteractiveItem on the hit object
                 m_CurrentInteractible = interactible;
+
+				sliderName = interactible.name;
 
                 // If we hit an interactive item and it's not the same as the last interactive item, then call Over
                 if (interactible && interactible != m_LastInteractible)
@@ -143,5 +147,10 @@ namespace VRStandardAssets.Utils
                 m_CurrentInteractible.DoubleClick();
 
         }
+
+		public static String getSliderName() {
+
+			return sliderName;
+		}
     }
 }
