@@ -28,17 +28,6 @@ public class EnemyAI : MonoBehaviour {
 		if (DestroyCollectObject.getPowerUp() == false) {
 
 			agent.SetDestination(target.transform.position);
-
-			//Debug.Log(float.IsInfinity(agent.remainingDistance));
-
-			/*if (agent.remainingDistance <= 0.1f) {
-
-				if (!float.IsInfinity(agent.remainingDistance)) {
-
-					Debug.Log("I killed the Player");
-				}
-			}*/
-
 		}
 		else {
 
