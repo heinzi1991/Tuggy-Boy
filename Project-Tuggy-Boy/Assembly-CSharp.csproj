@@ -53,7 +53,6 @@
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\FirstPersonController.cs" />
-     <Compile Include="Assets\Scripts\GUIHealth.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameOverManager.cs" />
      <Compile Include="Assets\Scripts\HeadBob.cs" />

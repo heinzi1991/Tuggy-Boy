@@ -11,16 +11,12 @@ public class GameManager : MonoBehaviour {
 	public int collectCount;
 	public GameObject player;
 	public int healthCount;
+	public GameObject heartImage;
 
 	private Text collectCounText;
-	private static int heartCount;
-
-	private int tempHealthCount;
 
 	void Awake() {
 
-		heartCount = healthCount;
-		tempHealthCount = healthCount;
 		collectCounText = gui.GetComponentInChildren<Text>();
 	}
 		
@@ -28,6 +24,14 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		
 		collectCounText.text = "-- / " + collectCount;
+
+		for (int i = 0; i < healthCount; i++) {
+
+			GameObject newHeart = Instantiate(heartImage) as GameObject;
+			newHeart.name = "Heart_" + i;
+			newHeart.transform.position = new Vector3(-1.0f + 0.2f * i, -0.8f, 0.0f);
+			newHeart.transform.SetParent(gui.transform, false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -35,21 +39,20 @@ public class GameManager : MonoBehaviour {
 
 		collectCounText.text = DestroyCollectObject.getDestroy () + " / " + collectCount;
 
-
-		/*if (healthCount > GUIHealth.getLifes()) {
-
-			GameObject.Find("Enemy(Clone)").transform.position = new Vector3(28.84f, 1.27f, 19.07f);
-		}*/
-
-
 		if (DestroyCollectObject.getDestroy() == collectCount) {
 
 			SceneManager.LoadScene ("Start Menu");
 		}
+
+		if (healthCount == 0) {
+
+			SceneManager.LoadScene("GameOverScene");
+		}
 	}
 
-	public static int getHeartCount () {
+	public void DestroyHeart() {
 
-		return heartCount;
-	} 
+		Destroy(GameObject.Find("Heart_" + (healthCount - 1)));
+		healthCount--;
+	}
 }

@@ -7,16 +7,22 @@ public class EnemyAI : MonoBehaviour {
 	private NavMeshAgent agent;
 	private RaycastHit hit;
 	private GameObject[] escapePoints;
+	private Vector3 spawnPoint;
+
+	private GameManager gameManager;
 
 	private int index;
 
 	void Awake() {
 
 		agent = GetComponent<NavMeshAgent> ();
+		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	void Start() {
 
+		spawnPoint = this.transform.position;
+		Debug.Log("spawnPoint: " + spawnPoint);
 		target = GameObject.FindGameObjectWithTag("Player");
 		escapePoints = GameObject.FindGameObjectsWithTag("Escape");
 
@@ -39,7 +45,16 @@ public class EnemyAI : MonoBehaviour {
 
 		if (other.name == "FPSController") {
 
-			Debug.Log("I killed the player!");
+			GetToStartPosition();
+			//Debug.Log("I killed the player!");
 		}
+		//killTarget = false;
 	}
+
+	void GetToStartPosition () {
+
+		this.transform.position = spawnPoint;
+		gameManager.DestroyHeart();
+	}
+
 }
