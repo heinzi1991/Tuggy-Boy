@@ -13,10 +13,17 @@ public class GameOverManager : MonoBehaviour {
 	[SerializeField] private UIFader m_ResumeGameFader;
 	[SerializeField] private SelectionSlider m_ResumeGameSlider;
 
+	private VREyeRaycaster eyeRay;
+
+	void Awake () {
+
+		eyeRay = GameObject.Find("Main Camera").GetComponent<VREyeRaycaster>();
+	}
+
 
 	IEnumerator Start () {
 		
-		if (VREyeRaycaster.getSliderName() == "BackToMenuSlider") {
+		if (eyeRay.CurrentInteractible.name == "BackToMenuSlider") {
 
 			yield return StartCoroutine(m_BackToMenuFader.InteruptAndFadeIn());
 			yield return StartCoroutine(m_BackToMenuSlider.WaitForBarToFill());
