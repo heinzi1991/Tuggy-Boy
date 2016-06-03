@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuAnimator.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuButton.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Scripts\Minimap.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\RigidbodyFirstPersonController.cs" />
+    <Compile Include="Assets\Scripts\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\Utils\InputWarnings.cs" />
     <Compile Include="Assets\Scripts\Utils\Reticle.cs" />
     <Compile Include="Assets\Scripts\Utils\SelectionRadial.cs" />
