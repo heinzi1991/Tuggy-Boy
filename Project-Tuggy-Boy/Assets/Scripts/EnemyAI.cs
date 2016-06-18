@@ -7,9 +7,10 @@ public class EnemyAI : MonoBehaviour {
 	private NavMeshAgent agent;
 	private RaycastHit hit;
 	private GameObject[] escapePoints;
-	private Vector3 spawnPoint;
 
 	private GameManager gameManager;
+	private EnemyManager enemyManager;
+	private CameraShake screenShake;
 
 	private int index;
 
@@ -17,12 +18,12 @@ public class EnemyAI : MonoBehaviour {
 
 		agent = GetComponent<NavMeshAgent> ();
 		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+		enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
+		screenShake = GameObject.Find("FPSController").GetComponentInChildren<CameraShake>();
 	}
 
 	void Start() {
 
-		spawnPoint = this.transform.position;
-		Debug.Log("spawnPoint: " + spawnPoint);
 		target = GameObject.FindGameObjectWithTag("Player");
 		escapePoints = GameObject.FindGameObjectsWithTag("Escape");
 
@@ -44,17 +45,19 @@ public class EnemyAI : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		if (other.name == "FPSController") {
+		
+			gameManager.DestroyHeart();
 
-			GetToStartPosition();
-			//Debug.Log("I killed the player!");
+			int index = this.name.IndexOf("_");
+			string count = this.name.Substring(index + 1, 1);
+			int spawnIndex = int.Parse(count);
+
+			enemyManager.Decrement(spawnIndex);
+
+			screenShake.LongShake(0.5f);
+
+			Destroy(this.gameObject);
 		}
-		//killTarget = false;
+
 	}
-
-	void GetToStartPosition () {
-
-		this.transform.position = spawnPoint;
-		gameManager.DestroyHeart();
-	}
-
 }

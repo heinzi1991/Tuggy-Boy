@@ -17,6 +17,8 @@ public class EnemyManager : MonoBehaviour {
 
 	void Spawn() {
 
+		//Debug.Log("EnemyCounterLength: " + enemyCounter.Length);
+
 		int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
 		if (counters[spawnPointIndex] == enemyCounter[spawnPointIndex]) {
@@ -25,7 +27,16 @@ public class EnemyManager : MonoBehaviour {
 		}
 
 		Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+		enemy.name = "Enemy_" + spawnPointIndex;
+
 
 		enemyCounter[spawnPointIndex] += 1;
 	}
+
+	public void Decrement(int spawnIndex) {
+
+		enemyCounter[spawnIndex] -= 1;
+	}
+		
+
 }
