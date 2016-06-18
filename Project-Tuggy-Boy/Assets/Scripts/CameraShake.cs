@@ -11,9 +11,9 @@ public class CameraShake : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		baseX = transform.position.x;
-		baseY = transform.position.y;
-		baseZ = transform.position.z;
+		baseX = 0.0f;
+		baseY = 0.0f;
+		baseZ = 0.0f;
 
 		intensity = 0.1f;
 	}
@@ -22,6 +22,12 @@ public class CameraShake : MonoBehaviour {
 	void Update () {
 
 		if (isShaking) {
+
+			GameObject player = GameObject.Find("FPSController");
+
+			baseX = player.transform.position.x;
+			baseY = player.transform.position.y + 1.0f;;
+			baseZ = player.transform.position.z;
 
 			float randomShakeX = Random.Range(-intensity, intensity);
 			float randomShakeY = Random.Range(-intensity, intensity);
@@ -34,7 +40,7 @@ public class CameraShake : MonoBehaviour {
 			if (shakes <= 0) {
 
 				isShaking = false;
-				transform.position = new Vector3(baseX, 1.83333333f, baseZ);
+				transform.position = new Vector3(baseX, baseY, baseZ);
 			}
 		}
 	}
