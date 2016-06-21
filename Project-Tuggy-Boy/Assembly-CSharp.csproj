@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\CheckController.cs" />
      <Compile Include="Assets\Scripts\CollectRotation.cs" />
+     <Compile Include="Assets\Scripts\CreateWayPoint.cs" />
      <Compile Include="Assets\Scripts\DestroyCollectObject.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
