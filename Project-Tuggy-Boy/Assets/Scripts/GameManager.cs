@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
 
 		if (isKonami) {
 
-			Debug.Log("Konami Code Check");
+			SceneManager.LoadScene("KonamiScene");
 		}
 			
 		if (Input.GetAxis("CrossX") != 0) {
@@ -142,12 +142,12 @@ public class GameManager : MonoBehaviour {
 
 		if (checkKonami == konamiCode[currentPos]) {
 
-			Debug.Log("Right Input for Konami at Positin " + currentPos);
+			//Debug.Log("Right Input for Konami at Positin " + currentPos);
 			currentPos++;
 
 			if ((currentPos + 1) > konamiCode.Length) {
 
-				Debug.Log("You are Konami");
+				//Debug.Log("You are Konami");
 				isKonami = true;
 				currentPos = 0;
 			}
