@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour {
 	public GameObject heartImage;
 
 	private Text collectCounText;
+	private string[] konamiCode = new string[]{"Up", "Up", "Down", "Down", "Left", "Right", "Left", "Right", "B", "A"};
+	private int currentPos = 0;
+	private bool isKonami = false;
+	private bool crossXUse = false;
+	private bool crossYUse = false;
+
 
 	void Awake() {
 
@@ -37,6 +43,50 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (isKonami) {
+
+			Debug.Log("Konami Code Check");
+		}
+			
+		if (Input.GetAxis("CrossX") != 0) {
+
+			if (crossXUse == false) {
+
+				checkInput(Input.GetAxis("CrossX"), "crossX");
+				crossXUse = true;
+			}
+		}
+
+		if (Input.GetAxis("CrossX") == 0) {
+
+			crossXUse = false;
+		}
+
+		if (Input.GetAxis("CrossY") != 0) {
+
+			if (crossYUse == false) {
+
+				checkInput(Input.GetAxis("CrossY"), "crossY");
+				crossYUse = true;
+			}
+		}
+
+		if (Input.GetAxis("CrossY") == 0) {
+
+			crossYUse = false;
+		}
+
+		if (Input.GetButtonDown("Jump")) {
+
+			checkInput(0, "buttonA");
+		}
+
+		if (Input.GetButtonDown("Fire1")) {
+
+			checkInput(0, "buttonB");
+		}
+
+
 		collectCounText.text = DestroyCollectObject.getDestroy () + " / " + collectCount;
 
 		if (DestroyCollectObject.getDestroy() == collectCount) {
@@ -49,6 +99,67 @@ public class GameManager : MonoBehaviour {
 			SceneManager.LoadScene("GameOverScene");
 		}
 	}
+
+	void checkInput(float input, string button) {
+
+		string checkKonami = "";
+
+		if (button == "crossX") {
+
+			if (input < 0) {
+
+				checkKonami = "Left";
+			}
+
+			if (input > 0) {
+
+				checkKonami = "Right";
+			}
+		}
+
+		if (button == "crossY") {
+
+			if (input < 0) {
+
+				checkKonami = "Down";
+			}
+
+			if (input > 0) {
+
+				checkKonami = "Up";
+			}
+		}
+
+		if (button == "buttonA") {
+
+			checkKonami = "A";
+		}
+
+		if (button == "buttonB") {
+
+			checkKonami = "B";
+		}
+
+		if (checkKonami == konamiCode[currentPos]) {
+
+			Debug.Log("Right Input for Konami at Positin " + currentPos);
+			currentPos++;
+
+			if ((currentPos + 1) > konamiCode.Length) {
+
+				Debug.Log("You are Konami");
+				isKonami = true;
+				currentPos = 0;
+			}
+		}
+		else {
+
+			Debug.Log("You fail!");
+			currentPos = 0;
+		}
+
+	}
+
 
 	public void DestroyHeart() {
 
