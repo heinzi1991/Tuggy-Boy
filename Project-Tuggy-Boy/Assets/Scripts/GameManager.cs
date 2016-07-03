@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
 
 		if (isKonami) {
 
-			SceneManager.LoadScene("KonamiScene");
+			StartCoroutine(ChangeLevel("KonamiScene"));
 		}
 			
 		if (Input.GetAxis("CrossX") != 0) {
@@ -91,12 +91,12 @@ public class GameManager : MonoBehaviour {
 
 		if (DestroyCollectObject.getDestroy() == collectCount) {
 
-			SceneManager.LoadScene ("Start Menu");
+			StartCoroutine(ChangeLevel("Start Menu"));
 		}
 
 		if (healthCount == 0) {
 
-			SceneManager.LoadScene("GameOverScene");
+			StartCoroutine(ChangeLevel("GameOverScene"));
 		}
 	}
 
@@ -142,12 +142,10 @@ public class GameManager : MonoBehaviour {
 
 		if (checkKonami == konamiCode[currentPos]) {
 
-			//Debug.Log("Right Input for Konami at Positin " + currentPos);
 			currentPos++;
 
 			if ((currentPos + 1) > konamiCode.Length) {
 
-				//Debug.Log("You are Konami");
 				isKonami = true;
 				currentPos = 0;
 			}
@@ -158,6 +156,13 @@ public class GameManager : MonoBehaviour {
 			currentPos = 0;
 		}
 
+	}
+
+	IEnumerator ChangeLevel(string LevelName) {
+
+		float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
+		yield return new WaitForSeconds(fadeTime);
+		SceneManager.LoadScene(LevelName);
 	}
 
 
