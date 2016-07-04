@@ -26,9 +26,8 @@ public class EnemyManager : MonoBehaviour {
 			return;
 		}
 
-		Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-		enemy.name = "Enemy_" + spawnPointIndex;
-
+		GameObject newEnemy = (GameObject)Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+		newEnemy.name = "Enemy_" + spawnPointIndex;
 
 		enemyCounter[spawnPointIndex] += 1;
 	}
