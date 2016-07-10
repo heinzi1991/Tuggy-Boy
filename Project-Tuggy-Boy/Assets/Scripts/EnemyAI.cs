@@ -11,6 +11,11 @@ public class EnemyAI : MonoBehaviour {
 	private GameManager gameManager;
 	private EnemyManager enemyManager;
 	private CameraShake screenShake;
+	private DestroyCollectObject destroyObject;
+
+	private Vector3 targetPoint;
+	private Quaternion targetRotation;
+
 
 	private int index;
 
@@ -20,6 +25,7 @@ public class EnemyAI : MonoBehaviour {
 		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
 		screenShake = GameObject.Find("FPSController").GetComponentInChildren<CameraShake>();
+		destroyObject = GameObject.Find("FPSController").GetComponent<DestroyCollectObject>();
 	}
 
 	void Start() {
@@ -32,7 +38,11 @@ public class EnemyAI : MonoBehaviour {
 
 	void Update() {
 
-		if (DestroyCollectObject.getPowerUp() == false) {
+		targetPoint = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z) - transform.position;
+		targetRotation = Quaternion.LookRotation(-targetPoint, Vector3.up);
+		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
+
+		if (destroyObject.getPowerUp() == false && destroyObject.getSaveMode() == false) {
 
 			agent.SetDestination(target.transform.position);
 		}

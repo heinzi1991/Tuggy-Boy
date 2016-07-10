@@ -8,8 +8,11 @@ public class DestroyCollectObject : MonoBehaviour {
 	public AudioClip powerUpSound;
 	public AudioClip collectSound;
 
-	private static bool powerUp;
-	private static int destroy = 0;
+	private bool powerUp = false;
+	private int destroy = 0;
+	private bool save = false;
+
+	private bool isTriggered = false;
 
 	private AudioSource audioSource;
 
@@ -22,7 +25,6 @@ public class DestroyCollectObject : MonoBehaviour {
 
 		if(col.gameObject.tag == "CollectObject") {
 
-			//audioSource.clip = collectSound;
 			audioSource.PlayOneShot(collectSound, 1.0f);
 			GameObject clone = (GameObject)Instantiate(collectParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), collectParticle.transform.rotation);
 			Destroy (col.gameObject);
@@ -32,7 +34,6 @@ public class DestroyCollectObject : MonoBehaviour {
 
 		if (col.gameObject.tag == "PowerUp") {
 
-			//audioSource.clip = powerUpSound;
 			audioSource.PlayOneShot(powerUpSound, 1.0f);
 			GameObject clone = (GameObject)Instantiate(powerUpParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), powerUpParticle.transform.rotation);
 			Destroy (col.gameObject);
@@ -41,14 +42,47 @@ public class DestroyCollectObject : MonoBehaviour {
 		}
 	}
 
-	public static int getDestroy() {
+	void OnTriggerEnter (Collider col) {
+
+		if (col.gameObject.tag == "SaveRoom") {
+
+			if (isTriggered == false) {
+
+				if (save) {
+
+					save = false;
+				}
+				else {
+
+					save = true;
+				}
+
+				isTriggered = true;
+			}
+		}
+	}
+
+	void OnTriggerExit (Collider col) {
+
+		if (col.gameObject.tag == "SaveRoom") {
+
+			isTriggered = false;
+		}
+	}
+
+	public int getDestroy() {
 
 		return destroy;
 	}
 
-	public static bool getPowerUp() {
+	public bool getPowerUp() {
 
 		return powerUp;
+	}
+
+	public bool getSaveMode() {
+
+		return save;
 	}
 
 	IEnumerator Waiting() {
@@ -57,6 +91,4 @@ public class DestroyCollectObject : MonoBehaviour {
 		yield return new WaitForSeconds(5.0f);
 		powerUp = false;
 	}
-
-
 }

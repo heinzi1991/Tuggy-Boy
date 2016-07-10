@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject heartImage;
 
 	private Text collectCounText;
+	private Fading fade;
+	private DestroyCollectObject destroyObject;
+
 	private string[] konamiCode = new string[]{"Up", "Up", "Down", "Down", "Left", "Right", "Left", "Right", "B", "A"};
 	private int currentPos = 0;
 	private bool isKonami = false;
@@ -24,6 +27,8 @@ public class GameManager : MonoBehaviour {
 	void Awake() {
 
 		collectCounText = gui.GetComponentInChildren<Text>();
+		fade = GetComponent<Fading>();
+		destroyObject = GameObject.Find("FPSController").GetComponent<DestroyCollectObject>();
 	}
 		
 	// Use this for initialization
@@ -87,9 +92,9 @@ public class GameManager : MonoBehaviour {
 		}
 
 
-		collectCounText.text = DestroyCollectObject.getDestroy () + " / " + collectCount;
+		collectCounText.text = destroyObject.getDestroy () + " / " + collectCount;
 
-		if (DestroyCollectObject.getDestroy() == collectCount) {
+		if (destroyObject.getDestroy() == collectCount) {
 
 			StartCoroutine(ChangeLevel("Start Menu"));
 		}
@@ -160,7 +165,7 @@ public class GameManager : MonoBehaviour {
 
 	IEnumerator ChangeLevel(string LevelName) {
 
-		float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
+		float fadeTime = fade.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
 		SceneManager.LoadScene(LevelName);
 	}

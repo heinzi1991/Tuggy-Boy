@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 41c35a7d284db394a837bbebb60b08d9
+timeCreated: 1468013107
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cherry
+    100002: //RootNode
+    100004: Cherry_1
+    100006: CINEMA_4D_Editor
+    100008: "Deckfl\xE4che_1"
+    100010: "Deckfl\xE4che_1_2"
+    100012: "Deckfl\xE4che_2"
+    100014: "Deckfl\xE4che_2_2"
+    100016: Kugel
+    100018: Kugel_2
+    100020: Null
+    100022: Subdivision_Surface
+    100024: Subdivision_Surface_1
+    100026: Subdivision_Surface_1_2
+    100028: Subdivision_Surface_1_2_MeshPart0
+    100030: Subdivision_Surface_1_2_MeshPart1
+    100032: Subdivision_Surface_1_2_MeshPart2
+    100034: Subdivision_Surface_1_MeshPart0
+    100036: Subdivision_Surface_1_MeshPart1
+    100038: Subdivision_Surface_1_MeshPart2
+    100040: Subdivision_Surface_2
+    400000: Cherry
+    400002: //RootNode
+    400004: Cherry_1
+    400006: CINEMA_4D_Editor
+    400008: "Deckfl\xE4che_1"
+    400010: "Deckfl\xE4che_1_2"
+    400012: "Deckfl\xE4che_2"
+    400014: "Deckfl\xE4che_2_2"
+    400016: Kugel
+    400018: Kugel_2
+    400020: Null
+    400022: Subdivision_Surface
+    400024: Subdivision_Surface_1
+    400026: Subdivision_Surface_1_2
+    400028: Subdivision_Surface_1_2_MeshPart0
+    400030: Subdivision_Surface_1_2_MeshPart1
+    400032: Subdivision_Surface_1_2_MeshPart2
+    400034: Subdivision_Surface_1_MeshPart0
+    400036: Subdivision_Surface_1_MeshPart1
+    400038: Subdivision_Surface_1_MeshPart2
+    400040: Subdivision_Surface_2
+    2300000: "Deckfl\xE4che_1"
+    2300002: "Deckfl\xE4che_1_2"
+    2300004: "Deckfl\xE4che_2"
+    2300006: "Deckfl\xE4che_2_2"
+    2300008: Kugel
+    2300010: Kugel_2
+    2300012: Subdivision_Surface_1_2_MeshPart0
+    2300014: Subdivision_Surface_1_2_MeshPart1
+    2300016: Subdivision_Surface_1_2_MeshPart2
+    2300018: Subdivision_Surface_1_MeshPart0
+    2300020: Subdivision_Surface_1_MeshPart1
+    2300022: Subdivision_Surface_1_MeshPart2
+    3300000: "Deckfl\xE4che_1"
+    3300002: "Deckfl\xE4che_1_2"
+    3300004: "Deckfl\xE4che_2"
+    3300006: "Deckfl\xE4che_2_2"
+    3300008: Kugel
+    3300010: Kugel_2
+    3300012: Subdivision_Surface_1_2_MeshPart0
+    3300014: Subdivision_Surface_1_2_MeshPart1
+    3300016: Subdivision_Surface_1_2_MeshPart2
+    3300018: Subdivision_Surface_1_MeshPart0
+    3300020: Subdivision_Surface_1_MeshPart1
+    3300022: Subdivision_Surface_1_MeshPart2
+    4300000: Subdivision_Surface_1_MeshPart0
+    4300002: Subdivision_Surface_1_MeshPart1
+    4300004: Subdivision_Surface_1_MeshPart2
+    4300006: "Deckfl\xE4che_1"
+    4300008: "Deckfl\xE4che_2"
+    4300010: Kugel
+    4300012: Subdivision_Surface_1_2_MeshPart0
+    4300014: Subdivision_Surface_1_2_MeshPart1
+    4300016: Subdivision_Surface_1_2_MeshPart2
+    4300018: "Deckfl\xE4che_1_2"
+    4300020: "Deckfl\xE4che_2_2"
+    4300022: Kugel_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
