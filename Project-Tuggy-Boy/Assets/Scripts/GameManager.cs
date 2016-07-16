@@ -7,9 +7,8 @@ public class GameManager : MonoBehaviour {
 
 
 	public GameObject gui;
-	public EnemyManager enemyManager;
 	public int collectCount;
-	public GameObject player;
+	//public GameObject player;
 	public int healthCount;
 	public GameObject heartImage;
 
@@ -28,11 +27,13 @@ public class GameManager : MonoBehaviour {
 
 		collectCounText = gui.GetComponentInChildren<Text>();
 		fade = GetComponent<Fading>();
-		destroyObject = GameObject.Find("FPSController").GetComponent<DestroyCollectObject>();
+		destroyObject = GameObject.Find("OVRPlayerController").GetComponent<DestroyCollectObject>();
 	}
 		
 	// Use this for initialization
 	void Start () {
+
+		healthCount = PlayerPrefs.GetInt("HealthCount");
 		
 		collectCounText.text = "-- / " + collectCount;
 
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
 		if (isKonami) {
 
-			StartCoroutine(ChangeLevel("KonamiScene"));
+			StartCoroutine(ChangeLevel(4));
 		}
 			
 		if (Input.GetAxis("CrossX") != 0) {
@@ -90,18 +91,25 @@ public class GameManager : MonoBehaviour {
 
 			checkInput(0, "buttonB");
 		}
-
-
+			
 		collectCounText.text = destroyObject.getDestroy () + " / " + collectCount;
 
 		if (destroyObject.getDestroy() == collectCount) {
 
-			StartCoroutine(ChangeLevel("Start Menu"));
+			if (SceneManager.GetActiveScene().buildIndex == 1) {
+
+				StartCoroutine(ChangeLevel(0));
+			}
+			else {
+
+				PlayerPrefs.SetInt("HealthCount", healthCount);
+				StartCoroutine(ChangeLevel(SceneManager.GetActiveScene().buildIndex + 1));
+			}
 		}
 
 		if (healthCount == 0) {
 
-			StartCoroutine(ChangeLevel("GameOverScene"));
+			StartCoroutine(ChangeLevel(3));
 		}
 	}
 
@@ -163,11 +171,11 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	IEnumerator ChangeLevel(string LevelName) {
+	IEnumerator ChangeLevel(int index) {
 
 		float fadeTime = fade.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
-		SceneManager.LoadScene(LevelName);
+		SceneManager.LoadScene(index);
 	}
 
 

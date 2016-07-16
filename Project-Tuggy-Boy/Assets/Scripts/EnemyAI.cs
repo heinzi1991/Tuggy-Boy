@@ -55,19 +55,34 @@ public class EnemyAI : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		if (other.name == "FPSController") {
+
+			if (destroyObject.getPowerUp() == false) {
+
+				gameManager.DestroyHeart();
+
+				int index = this.name.IndexOf("_");
+				string count = this.name.Substring(index + 1, 1);
+				int spawnIndex = int.Parse(count);
+
+				enemyManager.Decrement(spawnIndex);
+
+				screenShake.LongShake(0.5f);
+
+				Destroy(this.gameObject);
+			}
+			else {
+
+				int index = this.name.IndexOf("_");
+				string count = this.name.Substring(index + 1, 1);
+				int spawnIndex = int.Parse(count);
+
+				enemyManager.DecrementCounter(spawnIndex);
+				enemyManager.Decrement(spawnIndex);
+
+				Destroy(this.gameObject);
+			}
 		
-			gameManager.DestroyHeart();
 
-			int index = this.name.IndexOf("_");
-			string count = this.name.Substring(index + 1, 1);
-			int spawnIndex = int.Parse(count);
-
-			enemyManager.Decrement(spawnIndex);
-
-			screenShake.LongShake(0.5f);
-
-			Destroy(this.gameObject);
 		}
-
 	}
 }

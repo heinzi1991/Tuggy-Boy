@@ -96,7 +96,7 @@ namespace VRStandardAssets.Menu
 
 			float fadeTime = GetComponent<Fading>().BeginFade(1);
 			yield return new WaitForSeconds(fadeTime);
-			SceneManager.LoadScene(m_SceneToLoad, LoadSceneMode.Single);
+			SceneManager.LoadScene(m_SceneToLoad);
 		}
     }
 }

@@ -18,7 +18,7 @@ public class CollectRotation : MonoBehaviour {
 		if (gameObject.tag == "PowerUp") {
 
 			angle += 25 * Time.deltaTime * speed;
-			transform.eulerAngles = new Vector3(30, angle, 0);
+			transform.eulerAngles = new Vector3(0, angle, 0);
 		}
 		else {
 

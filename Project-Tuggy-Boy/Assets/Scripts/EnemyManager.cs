@@ -36,6 +36,11 @@ public class EnemyManager : MonoBehaviour {
 
 		enemyCounter[spawnIndex] -= 1;
 	}
+
+	public void DecrementCounter(int spawnIndex) {
+
+		counters[spawnIndex] -= 1;
+	}
 		
 
 }
