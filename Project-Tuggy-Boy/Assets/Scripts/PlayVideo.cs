@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent (typeof(AudioSource))]
 
@@ -24,13 +25,16 @@ public class PlayVideo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.Space) && movie.isPlaying) {
+		if (Input.GetButton("Jump") && movie.isPlaying) {
 
 			movie.Pause();
-		}
-		else if (Input.GetKeyDown(KeyCode.Space) && !movie.isPlaying) {
+			SceneManager.LoadScene("Start Menu");
 
-			movie.Play();
+		}
+
+		if (!movie.isPlaying) {
+
+			SceneManager.LoadScene("Start Menu");
 		}
 	
 	}
