@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
 		if (isKonami) {
 
-			StartCoroutine(ChangeLevel(4));
+			StartCoroutine(ChangeLevel(12));
 		}
 			
 		if (Input.GetAxis("CrossX") != 0) {
@@ -96,9 +96,13 @@ public class GameManager : MonoBehaviour {
 
 		if (destroyObject.getDestroy() == collectCount) {
 
-			if (SceneManager.GetActiveScene().buildIndex == 1) {
+			if (SceneManager.GetActiveScene().buildIndex == 2) {
 
-				StartCoroutine(ChangeLevel(0));
+				StartCoroutine(ChangeLevel(1));
+			}
+			else if (SceneManager.GetActiveScene().buildIndex == 9) {
+
+				StartCoroutine(ChangeLevel(10));
 			}
 			else {
 
@@ -109,7 +113,7 @@ public class GameManager : MonoBehaviour {
 
 		if (healthCount == 0) {
 
-			StartCoroutine(ChangeLevel(3));
+			StartCoroutine(ChangeLevel(11));
 		}
 	}
 

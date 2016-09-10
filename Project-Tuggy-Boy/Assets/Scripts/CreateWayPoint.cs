@@ -24,7 +24,7 @@ public class CreateWayPoint : MonoBehaviour {
 
 	void OnTriggerExit(Collider other) {
 
-		if(other.name == "FPSController") {
+		if(other.name == "OVRPlayerController") {
 
 			if (cubeExist == false) {
 

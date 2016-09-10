@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour {
 
 	private GameManager gameManager;
 	private EnemyManager enemyManager;
-	private CameraShake screenShake;
+	//private CameraShake screenShake;
 	private DestroyCollectObject destroyObject;
 
 	private Vector3 targetPoint;
@@ -24,8 +24,8 @@ public class EnemyAI : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent> ();
 		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
-		screenShake = GameObject.Find("FPSController").GetComponentInChildren<CameraShake>();
-		destroyObject = GameObject.Find("FPSController").GetComponent<DestroyCollectObject>();
+		//screenShake = GameObject.Find("FPSController").GetComponentInChildren<CameraShake>();
+		destroyObject = GameObject.Find("OVRPlayerController").GetComponent<DestroyCollectObject>();
 	}
 
 	void Start() {
@@ -54,7 +54,7 @@ public class EnemyAI : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
-		if (other.name == "FPSController") {
+		if (other.name == "OVRPlayerController") {
 
 			if (destroyObject.getPowerUp() == false) {
 
@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour {
 
 				enemyManager.Decrement(spawnIndex);
 
-				screenShake.LongShake(0.5f);
+				//screenShake.LongShake(0.5f);
 
 				Destroy(this.gameObject);
 			}
