@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 	private bool crossXUse = false;
 	private bool crossYUse = false;
 
+	private float secondCount = 0.0f;
 
 	void Awake() {
 
@@ -48,6 +49,11 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetButtonDown("Pause")) {
+
+			StartCoroutine(ChangeLevel(1));
+		}
 
 		if (isKonami) {
 
@@ -91,6 +97,8 @@ public class GameManager : MonoBehaviour {
 
 			checkInput(0, "buttonB");
 		}
+
+		UpdateTimerUI();
 			
 		collectCounText.text = destroyObject.getDestroy () + " / " + collectCount;
 
@@ -101,12 +109,14 @@ public class GameManager : MonoBehaviour {
 				StartCoroutine(ChangeLevel(1));
 			}
 			else if (SceneManager.GetActiveScene().buildIndex == 9) {
-
+				
+				SetTimeToPlayerPref(SceneManager.GetActiveScene().buildIndex);
 				StartCoroutine(ChangeLevel(10));
 			}
 			else {
 
 				PlayerPrefs.SetInt("HealthCount", healthCount);
+				SetTimeToPlayerPref(SceneManager.GetActiveScene().buildIndex);
 				StartCoroutine(ChangeLevel(SceneManager.GetActiveScene().buildIndex + 1));
 			}
 		}
@@ -187,5 +197,46 @@ public class GameManager : MonoBehaviour {
 
 		Destroy(GameObject.Find("Heart_" + (healthCount - 1)));
 		healthCount--;
+	}
+
+	public void UpdateTimerUI() {
+
+		secondCount += Time.deltaTime;
+
+		Debug.Log((int)secondCount + "s");
+	}
+
+	public void SetTimeToPlayerPref(int levelIndex) {
+
+		switch (levelIndex) {
+
+		case 4:
+			PlayerPrefs.SetInt("Time0", (int)secondCount);
+			break;
+
+		case 5:
+			PlayerPrefs.SetInt("Time1", (int)secondCount);
+			break;
+
+		case 6:
+			PlayerPrefs.SetInt("Time2", (int)secondCount);
+			break;
+
+		case 7:
+			PlayerPrefs.SetInt("Time3", (int)secondCount);
+			break;
+
+		case 8:
+			PlayerPrefs.SetFloat("Time4", (int)secondCount);
+			break;
+
+		case 9:
+			PlayerPrefs.SetInt("Time5", (int)secondCount);
+			break;
+
+		default:
+			Debug.Log("Fail Time Save")	;
+			break;
+		}
 	}
 }

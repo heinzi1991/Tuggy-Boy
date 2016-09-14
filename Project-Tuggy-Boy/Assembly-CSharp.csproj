@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HeadBob.cs" />
+     <Compile Include="Assets\Scripts\HighscoreList.cs" />
      <Compile Include="Assets\Scripts\KonamiManager.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuAnimator.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuButton.cs" />
@@ -101,6 +102,7 @@
      <Compile Include="Assets\Scripts\Utils\VRCameraFade.cs" />
      <Compile Include="Assets\Scripts\Utils\VRCameraUI.cs" />
      <Compile Include="Assets\Scripts\Utils\VRGui.cs" />
+     <Compile Include="Assets\Scripts\WinManager.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRDeviceManager.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VREyeRaycaster.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRFPSCounter.cs" />

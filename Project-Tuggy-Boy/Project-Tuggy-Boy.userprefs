@@ -1,11 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyAI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WinManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\CreateWayPoint.cs" Line="27" Column="40" />
+      <File FileName="Assets\Scripts\WinManager.cs" Line="29" Column="30" />
+      <File FileName="Assets\Scripts\HighscoreList.cs" Line="21" Column="5" />
+      <File FileName="Assets\Scripts\SettingsManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="25" Column="34" />
+      <File FileName="Assets\Scripts\CreateWayPoint.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayVideo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="30" Column="55" />
-      <File FileName="Assets\Scripts\EnemyAI.cs" Line="57" Column="41" />
+      <File FileName="Assets\Scripts\EnemyAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SetHealthCount.cs" Line="17" Column="32" />
+      <File FileName="Assets\Scripts\CollectRotation.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
