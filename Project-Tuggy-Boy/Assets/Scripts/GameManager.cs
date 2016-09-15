@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
 
 		if (isKonami) {
 
-			StartCoroutine(ChangeLevel(12));
+			StartCoroutine(ChangeLevel(13));
 		}
 			
 		if (Input.GetAxis("CrossX") != 0) {
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour {
 
 		if (healthCount == 0) {
 
-			StartCoroutine(ChangeLevel(11));
+			StartCoroutine(ChangeLevel(12));
 		}
 	}
 
@@ -202,8 +202,6 @@ public class GameManager : MonoBehaviour {
 	public void UpdateTimerUI() {
 
 		secondCount += Time.deltaTime;
-
-		Debug.Log((int)secondCount + "s");
 	}
 
 	public void SetTimeToPlayerPref(int levelIndex) {

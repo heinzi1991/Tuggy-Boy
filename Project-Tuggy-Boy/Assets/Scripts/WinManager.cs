@@ -77,6 +77,7 @@ public class WinManager : MonoBehaviour {
 
 			tempArray = new int[10] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
+			//highscoreObject.transform.Find("Highscore Text").GetComponent<TextMesh>().text = "NEW HIGHSCORE (" + totalTime + ")";
 			highscoreObject.SetActive(true);
 
 			chars[charCount].text = letters[letterCount];
@@ -327,8 +328,13 @@ public class WinManager : MonoBehaviour {
 
 		highscoreName += chars[charCount].text;
 
-		//PlayerPrefs.SetInt("highscore" + highscorePostion, totalTime);
-		//PlayerPrefs.SetString("highscoreName" + highscorePostion, highscoreName);
+		if (highscoreName == "Debug") {
+
+			clearHighscore();
+		}
+
+		PlayerPrefs.SetInt("highscore" + highscorePostion, totalTime);
+		PlayerPrefs.SetString("highscoreName" + highscorePostion, highscoreName);
 
 		SceneManager.LoadScene("Start Menu");
 
@@ -365,11 +371,19 @@ public class WinManager : MonoBehaviour {
 				break;
 			}
 		}
-
-	
 	}
 
+	public void clearHighscore() {
 
+		for (int i = 0; i < 5; i++) {
+
+			if (PlayerPrefs.HasKey("highscore" + i) == true) {
+
+				PlayerPrefs.DeleteKey("highscore" + i);
+				PlayerPrefs.DeleteKey("highscoreName" + i);
+			}
+		}
+	}
 
 
 }
