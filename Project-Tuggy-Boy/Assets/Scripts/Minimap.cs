@@ -18,7 +18,7 @@ public class Minimap : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
+
     foreach (GameObject floor in mini_map_floors)
     {
       floor.SetActive(false);

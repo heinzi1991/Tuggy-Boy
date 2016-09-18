@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using VRStandardAssets.Utils;
 
@@ -39,6 +40,9 @@ public class WinManager : MonoBehaviour {
 	private bool isHighscore = false;
 
 
+	private List<int> highscoreList = new List<int>();
+
+
 	void Awake() {
 
 		for (int i = 0; i < 6; i++) {
@@ -51,8 +55,17 @@ public class WinManager : MonoBehaviour {
 			if (PlayerPrefs.HasKey("highscore" + i) == false) {
 
 				isHighscore = true;
-				highscorePostion = i;
-				break;
+
+				if (i == 0) {
+					
+					highscorePostion = i;
+					break;
+				}
+				else {
+
+					sortHighscore();
+					break;
+				}
 			}
 			else {
 
@@ -77,7 +90,7 @@ public class WinManager : MonoBehaviour {
 
 			tempArray = new int[10] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-			//highscoreObject.transform.Find("Highscore Text").GetComponent<TextMesh>().text = "NEW HIGHSCORE (" + totalTime + ")";
+			highscoreObject.transform.Find("Highscore Text").GetComponent<TextMesh>().text = "NEW HIGHSCORE (" + totalTime + ")";
 			highscoreObject.SetActive(true);
 
 			chars[charCount].text = letters[letterCount];
@@ -332,37 +345,78 @@ public class WinManager : MonoBehaviour {
 
 			clearHighscore();
 		}
+		else {
 
-		PlayerPrefs.SetInt("highscore" + highscorePostion, totalTime);
-		PlayerPrefs.SetString("highscoreName" + highscorePostion, highscoreName);
-
+			PlayerPrefs.SetInt("highscore" + highscorePostion, totalTime);
+			PlayerPrefs.SetString("highscoreName" + highscorePostion, highscoreName);
+		}
+			
 		SceneManager.LoadScene("Start Menu");
 
 	}
 
 
-	public void getHighscores() {
+	public void getHighscores(string key) {
 
-		highscores = new int[5];
+		if (key == "list") {
 
-		for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 5; i++) {
 
-			highscores[i] = PlayerPrefs.GetInt("highscore" + i);
+				if (PlayerPrefs.HasKey("highscore" + i) == true) {
+
+					highscoreList.Add(PlayerPrefs.GetInt("highscore" + i));
+				}
+			}
 		}
+		else {
+
+			highscores = new int[5];
+
+			for (int i = 0; i < 5; i++) {
+
+				if (PlayerPrefs.HasKey("highscore" + i)) {
+
+					highscores[i] = PlayerPrefs.GetInt("highscore" + i);
+				}
+			}
+		}
+
+
 	}
 
 	public void changeHighscores() {
 
-		getHighscores();
+		getHighscores("array");
 
 		for (int i = 0; i < 5; i++) {
 
-			if (totalTime < highscores[i]) {
+			if (totalTime <= highscores[i]) {
 
 				isHighscore = true;
 				highscorePostion = i;
 
-				for (int j = 4; j <= i; j--) {
+				for (int j = 4; j > i; j--) {
+
+					PlayerPrefs.SetInt("highscore" + j, PlayerPrefs.GetInt("highscore" + (j - 1)));
+					PlayerPrefs.SetString("highscoreName" + j, PlayerPrefs.GetString("highscoreName" + (j - 1)));
+				}
+
+				break;
+			}
+		}
+	}
+
+	public void sortHighscore() {
+
+		getHighscores("list");
+
+		for (int i = 0; i < highscoreList.Count; i++) {
+
+			if (totalTime <= highscoreList[i]) {
+
+				highscorePostion = i;
+
+				for (int j = highscoreList.Count; j > i; j--) {
 
 					PlayerPrefs.SetInt("highscore" + j, PlayerPrefs.GetInt("highscore" + (j - 1)));
 					PlayerPrefs.SetString("highscoreName" + j, PlayerPrefs.GetString("highscoreName" + (j - 1)));
@@ -384,13 +438,4 @@ public class WinManager : MonoBehaviour {
 			}
 		}
 	}
-
-
 }
-
-
-
-
-
-
-
