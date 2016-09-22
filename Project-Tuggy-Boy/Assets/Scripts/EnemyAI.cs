@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
 
+	public GameObject vibrationObject;
+
 	private GameObject target;
 	private NavMeshAgent agent;
 	private RaycastHit hit;
@@ -10,21 +12,21 @@ public class EnemyAI : MonoBehaviour {
 
 	private GameManager gameManager;
 	private EnemyManager enemyManager;
-	//private CameraShake screenShake;
 	private DestroyCollectObject destroyObject;
 
 	private Vector3 targetPoint;
 	private Quaternion targetRotation;
 
-
 	private int index;
+
+	private float waitTime = 0.0f;
+
 
 	void Awake() {
 
 		agent = GetComponent<NavMeshAgent> ();
 		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
-		//screenShake = GameObject.Find("FPSController").GetComponentInChildren<CameraShake>();
 		destroyObject = GameObject.Find("OVRPlayerController").GetComponent<DestroyCollectObject>();
 	}
 
@@ -66,7 +68,7 @@ public class EnemyAI : MonoBehaviour {
 
 				enemyManager.Decrement(spawnIndex);
 
-				//screenShake.LongShake(0.5f);
+				Instantiate(vibrationObject, transform.position, Quaternion.identity);
 
 				Destroy(this.gameObject);
 			}
@@ -81,8 +83,6 @@ public class EnemyAI : MonoBehaviour {
 
 				Destroy(this.gameObject);
 			}
-		
-
 		}
 	}
 }
