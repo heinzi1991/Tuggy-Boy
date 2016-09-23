@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CreateWayPoint : MonoBehaviour {
 
@@ -28,7 +29,15 @@ public class CreateWayPoint : MonoBehaviour {
 
 			if (cubeExist == false) {
 
-                GameObject print = Instantiate(Resources.Load("footprint")) as GameObject;
+                string footprint_prefab = "footprint_black";
+
+                // Tutorial Level
+                if (SceneManager.GetActiveScene().buildIndex == 2)
+                {
+                    footprint_prefab = "footprint_green";
+                }
+
+                GameObject print = Instantiate(Resources.Load(footprint_prefab)) as GameObject;
                 //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 print.transform.parent = wayPoints.transform;
                 print.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.26f, this.transform.position.z);

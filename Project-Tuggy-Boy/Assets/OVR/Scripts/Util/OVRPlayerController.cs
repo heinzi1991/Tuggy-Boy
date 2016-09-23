@@ -307,11 +307,13 @@ public class OVRPlayerController : MonoBehaviour
 
         if (OVRInput.Get(OVRInput.Button.DpadUp))
         {
-            minimap.transform.Translate(0, 0, -0.025f, this.transform);
+            if (minimap.transform.localPosition.z >= 0.5)
+                minimap.transform.Translate(0, 0, -0.025f, this.transform);
         }
 
         if (OVRInput.Get(OVRInput.Button.DpadDown))
         {
+            if (minimap.transform.localPosition.z <= 1.5)
             minimap.transform.Translate(0, 0, 0.025f, this.transform);
         }
 
