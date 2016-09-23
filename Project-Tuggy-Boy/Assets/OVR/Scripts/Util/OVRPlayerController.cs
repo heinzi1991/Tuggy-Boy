@@ -79,6 +79,7 @@ public class OVRPlayerController : MonoBehaviour
 	public bool useProfileData = true;
 
 	protected CharacterController Controller = null;
+    protected GameObject minimap = null;
 	protected OVRCameraRig CameraRig = null;
 
 	private float MoveScale = 1.0f;
@@ -105,6 +106,7 @@ public class OVRPlayerController : MonoBehaviour
 	void Awake()
 	{
 		Controller = gameObject.GetComponent<CharacterController>();
+        minimap = GameObject.Find("Minimap");
 
 		if(Controller == null)
 			Debug.LogWarning("OVRPlayerController: No CharacterController attached.");
@@ -235,13 +237,13 @@ public class OVRPlayerController : MonoBehaviour
 			dpad_move   = true;
 
 		}
-
+        
 		if (OVRInput.Get(OVRInput.Button.DpadDown))
 		{
 			moveBack  = true;
 			dpad_move = true;
 		}*/
-
+        
 		MoveScale = 1.0f;
 
 		/*if ( (moveForward && moveLeft) || (moveForward && moveRight) ||
@@ -282,7 +284,7 @@ public class OVRPlayerController : MonoBehaviour
 
 		Vector3 euler = transform.rotation.eulerAngles;
 
-		/*bool curHatLeft = OVRInput.Get(OVRInput.Button.PrimaryShoulder);
+        /*bool curHatLeft = OVRInput.Get(OVRInput.Button.PrimaryShoulder);
 
 		if (curHatLeft && !prevHatLeft)
 			euler.y -= RotationRatchet;
@@ -296,14 +298,36 @@ public class OVRPlayerController : MonoBehaviour
 
 		prevHatRight = curHatRight;*/
 
-		//Use keys to ratchet rotation
-		/*if (Input.GetKeyDown(KeyCode.Q))
+        //Use keys to ratchet rotation
+        /*if (Input.GetKeyDown(KeyCode.Q))
 			euler.y -= RotationRatchet;
 
 		if (Input.GetKeyDown(KeyCode.E))
 			euler.y += RotationRatchet;*/
 
-		if (Input.GetButtonDown("Jump")) {
+        if (OVRInput.Get(OVRInput.Button.DpadUp))
+        {
+            minimap.transform.Translate(0, 0, -0.025f, this.transform);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.DpadDown))
+        {
+            minimap.transform.Translate(0, 0, 0.025f, this.transform);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.DpadLeft))
+        {
+            if (minimap.transform.rotation.eulerAngles.x > 285)
+                minimap.transform.Rotate(-1, 0, 0);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.DpadRight))
+        {
+            if (minimap.transform.rotation.eulerAngles.x < 325)
+                minimap.transform.Rotate(1, 0, 0);
+        }
+
+        if (Input.GetButtonDown("Jump")) {
 
 			Jump();
 		}
