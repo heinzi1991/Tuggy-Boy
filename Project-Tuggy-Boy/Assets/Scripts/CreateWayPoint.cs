@@ -28,10 +28,11 @@ public class CreateWayPoint : MonoBehaviour {
 
 			if (cubeExist == false) {
 
-				GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-				cube.transform.parent = wayPoints.transform;
-				cube.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.16f, this.transform.position.z);
-				cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                GameObject print = Instantiate(Resources.Load("footprint")) as GameObject;
+                //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                print.transform.parent = wayPoints.transform;
+                print.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.16f, this.transform.position.z);
+                //print.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
 				cubeExist = true;
 			}
 		}
