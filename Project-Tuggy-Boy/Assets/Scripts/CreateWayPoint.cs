@@ -31,7 +31,8 @@ public class CreateWayPoint : MonoBehaviour {
                 GameObject print = Instantiate(Resources.Load("footprint")) as GameObject;
                 //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 print.transform.parent = wayPoints.transform;
-                print.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.16f, this.transform.position.z);
+                print.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.26f, this.transform.position.z);
+                print.transform.Rotate(0, 0, -other.transform.eulerAngles.y);
                 //print.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
 				cubeExist = true;
 			}
