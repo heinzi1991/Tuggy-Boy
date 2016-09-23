@@ -20,7 +20,6 @@ public class HighscoreList : MonoBehaviour {
 				GameObject go = (GameObject)Instantiate(highscoreEntry);
 				go.transform.SetParent(this.transform, false);
 				go.transform.Find("Place").GetComponent<Text>().text = (i + 1).ToString();
-				//go.transform.Find("Score").GetComponent<Text>().text = PlayerPrefs.GetInt("highscore" + i).ToString();
 
 				totalSeconds = PlayerPrefs.GetInt("highscore" + i);
 
@@ -29,15 +28,27 @@ public class HighscoreList : MonoBehaviour {
 
 				if (minutes < 10) {
 
-					go.transform.Find("Score").GetComponent<Text>().text = "0" + minutes.ToString() + " min " + seconds.ToString() + " sec";
+					if (seconds < 10) {
+
+						go.transform.Find("Score").GetComponent<Text>().text = "0" + minutes.ToString() + " min " + "0" + seconds.ToString() + " sec";
+					}
+					else {
+
+						go.transform.Find("Score").GetComponent<Text>().text = "0" + minutes.ToString() + " min " + seconds.ToString() + " sec";
+					}
 				}
 				else {
 
-					go.transform.Find("Score").GetComponent<Text>().text = minutes.ToString() + " min " + seconds.ToString() + " sec";
+					if (seconds < 10) {
+
+						go.transform.Find("Score").GetComponent<Text>().text = minutes.ToString() + " min " + "0" + seconds.ToString() + " sec";
+					}
+					else {
+
+						go.transform.Find("Score").GetComponent<Text>().text = minutes.ToString() + " min " + seconds.ToString() + " sec";
+					}
 				}
-
-
-
+					
 				go.transform.Find("Name").GetComponent<Text>().text = PlayerPrefs.GetString("highscoreName" + i);
 
 			}

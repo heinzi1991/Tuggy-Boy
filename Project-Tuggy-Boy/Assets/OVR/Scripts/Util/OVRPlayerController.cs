@@ -260,13 +260,11 @@ public class OVRPlayerController : MonoBehaviour
 		// Run!
 		/*if (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
 			moveInfluence *= 1.0f;*/
+				
+		if (Input.GetAxis("Run Right") < 0) {
 
-		/*Debug.Log(Input.GetAxis("Run Right"));
-
-		if (Input.GetAxis("Run Right") < 0 || Input.GetAxis("Run Left") > 0) {
-
-			moveInfluence *= 1.0f;
-		}*/
+			MoveScale *= 1.5f;
+		}
 
 		Quaternion ort = transform.rotation;
 		Vector3 ortEuler = ort.eulerAngles;

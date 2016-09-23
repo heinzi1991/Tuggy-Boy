@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using XInputDotNetPure;
 
 public class GameManager : MonoBehaviour {
 
@@ -187,6 +188,7 @@ public class GameManager : MonoBehaviour {
 
 	IEnumerator ChangeLevel(int index) {
 
+		GamePad.SetVibration(0, 0.0f, 0.0f);
 		float fadeTime = fade.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
 		SceneManager.LoadScene(index);

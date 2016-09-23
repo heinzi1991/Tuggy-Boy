@@ -410,6 +410,8 @@ public class WinManager : MonoBehaviour {
 
 		getHighscores("list");
 
+		int sortCounter = 0;
+
 		for (int i = 0; i < highscoreList.Count; i++) {
 
 			if (totalTime <= highscoreList[i]) {
@@ -424,6 +426,15 @@ public class WinManager : MonoBehaviour {
 
 				break;
 			}
+			else {
+
+				sortCounter++;
+			}
+		}
+
+		if (sortCounter == highscoreList.Count) {
+
+			highscorePostion = sortCounter;
 		}
 	}
 
