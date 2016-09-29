@@ -331,7 +331,7 @@ public class WinManager : MonoBehaviour {
 		yield return StartCoroutine(m_Slider.WaitForBarToFill());
 		yield return StartCoroutine(m_Fader.InteruptAndFadeOut());
 
-		for (int i = 0; i < 10; i++) {
+		/*for (int i = 0; i < 10; i++) {
 
 			if (tempArray[i] != 0) {
 
@@ -339,7 +339,15 @@ public class WinManager : MonoBehaviour {
 			}				
 		}
 
-		highscoreName += chars[charCount].text;
+		highscoreName += chars[charCount].text;*/
+
+		for (int i = 0; i < 10; i++) {
+
+			if (chars[i].text != "-") {
+
+				highscoreName += chars[i].text;
+			}
+		}
 
 		if (highscoreName == "Debug") {
 

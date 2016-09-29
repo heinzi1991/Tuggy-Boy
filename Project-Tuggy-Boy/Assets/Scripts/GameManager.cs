@@ -9,12 +9,11 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject gui;
 	public int collectCount;
-	//public GameObject player;
 	public int healthCount;
 	public GameObject heartImage;
 
 	private Text collectCounText;
-	private Fading fade;
+ 	private Fading fade;
 	private DestroyCollectObject destroyObject;
 
 	private string[] konamiCode = new string[]{"Up", "Up", "Down", "Down", "Left", "Right", "Left", "Right", "B", "A"};
@@ -25,6 +24,7 @@ public class GameManager : MonoBehaviour {
 
 	private float secondCount = 0.0f;
 
+
 	void Awake() {
 
 		collectCounText = gui.GetComponentInChildren<Text>();
@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour {
 		destroyObject = GameObject.Find("OVRPlayerController").GetComponent<DestroyCollectObject>();
 	}
 		
-	// Use this for initialization
 	void Start () {
 
 		healthCount = PlayerPrefs.GetInt("HealthCount");
@@ -48,7 +47,6 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetButtonDown("Pause")) {
@@ -180,7 +178,7 @@ public class GameManager : MonoBehaviour {
 		}
 		else {
 
-			Debug.Log("You fail!");
+			//Debug.Log("You fail!");
 			currentPos = 0;
 		}
 

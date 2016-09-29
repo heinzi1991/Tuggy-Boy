@@ -263,7 +263,7 @@ public class OVRPlayerController : MonoBehaviour
 		/*if (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
 			moveInfluence *= 1.0f;*/
 				
-		if (Input.GetAxis("Run Right") < 0) {
+		if (Input.GetAxis("Run") < 0) {
 
 			MoveScale *= 2.0f;
 		}

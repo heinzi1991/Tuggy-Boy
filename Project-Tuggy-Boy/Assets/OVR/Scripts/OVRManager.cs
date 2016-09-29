@@ -487,10 +487,10 @@ public class OVRManager : MonoBehaviour
 
 		instance = this;
 
-		Debug.Log("Unity v" + Application.unityVersion + ", " +
+		/*Debug.Log("Unity v" + Application.unityVersion + ", " +
 		          "Oculus Utilities v" + OVRPlugin.wrapperVersion + ", " +
 		          "OVRPlugin v" + OVRPlugin.version + ", " +
-		          "SDK v" + OVRPlugin.nativeSDKVersion + ".");
+		          "SDK v" + OVRPlugin.nativeSDKVersion + ".");*/
 
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 		if (SystemInfo.graphicsDeviceType != UnityEngine.Rendering.GraphicsDeviceType.Direct3D11)
@@ -748,7 +748,7 @@ public class OVRManager : MonoBehaviour
 	{
 		if (volumeController == null)
 		{
-			Debug.Log("Creating volume controller...");
+			//Debug.Log("Creating volume controller...");
 			// Create the volume control popup
 			GameObject go = GameObject.Instantiate(Resources.Load("OVRVolumeController")) as GameObject;
 			if (go != null)

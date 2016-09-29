@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class EnemyManager : MonoBehaviour {
 
@@ -16,8 +18,6 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	void Spawn() {
-
-		//Debug.Log("EnemyCounterLength: " + enemyCounter.Length);
 
 		int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
