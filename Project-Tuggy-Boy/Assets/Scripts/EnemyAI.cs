@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour {
 
 	void Awake() {
 
-		agent = GetComponent<NavMeshAgent> ();
+		agent = GetComponent<NavMeshAgent>();
 		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
 		destroyObject = GameObject.Find("OVRPlayerController").GetComponent<DestroyCollectObject>();
