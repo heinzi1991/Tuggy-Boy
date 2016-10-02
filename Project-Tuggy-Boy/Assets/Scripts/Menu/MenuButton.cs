@@ -17,11 +17,12 @@ namespace VRStandardAssets.Menu
         [SerializeField] private string m_SceneToLoad;                      // The name of the scene to load.
         [SerializeField] private VRCameraFade m_CameraFade;                 // This fades the scene out when a new scene is about to be loaded.
         [SerializeField] private SelectionRadial m_SelectionRadial;         // This controls when the selection is complete.
-        [SerializeField] private VRInteractiveItem m_InteractiveItem;       // The interactive item for where the user should click to load the level.
+        [SerializeField] private VRInteractiveItem m_InteractiveItem; 		// The interactive item for where the user should click to load the level.
 
 
         private bool m_GazeOver;                                            // Whether the user is looking at the VRInteractiveItem currently.
 
+		public int healthCount;
 
         private void OnEnable ()
         {
@@ -86,9 +87,31 @@ namespace VRStandardAssets.Menu
 			}
 			else {
 
-				StartCoroutine(ChangeLevel());
-				// Load the level.
-				//SceneManager.LoadScene(m_SceneToLoad, LoadSceneMode.Single);
+				if (m_SceneToLoad == "FirstLevel") {
+
+					PlayerPrefs.SetInt("HealthCount", healthCount);
+					PlayerPrefs.SetInt("Time0", 0);
+					PlayerPrefs.SetInt("Time1", 0);
+					PlayerPrefs.SetInt("Time2", 0);
+					PlayerPrefs.SetInt("Time3", 0);
+					PlayerPrefs.SetInt("Time4", 0);
+					PlayerPrefs.SetInt("Time5", 0);
+
+					if (PlayerPrefs.GetInt("godModeActive") == 1) {
+
+						PlayerPrefs.SetInt("godMode", 0);
+					}
+
+					StartCoroutine(ChangeLevel());
+
+				}
+				else {
+
+					StartCoroutine(ChangeLevel());
+				}
+
+
+
 			}
         }
 

@@ -90,7 +90,7 @@ public class WinManager : MonoBehaviour {
 
 			tempArray = new int[10] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-			highscoreObject.transform.Find("Highscore Text").GetComponent<TextMesh>().text = "NEW HIGHSCORE (" + totalTime + ")";
+			highscoreObject.transform.Find("Highscore Text").GetComponent<TextMesh>().text = "NEW HIGHSCORE";
 			highscoreObject.SetActive(true);
 
 			chars[charCount].text = letters[letterCount];

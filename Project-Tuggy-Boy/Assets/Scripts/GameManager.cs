@@ -195,8 +195,11 @@ public class GameManager : MonoBehaviour {
 
 	public void DestroyHeart() {
 
-		Destroy(GameObject.Find("Heart_" + (healthCount - 1)));
-		healthCount--;
+		if (PlayerPrefs.GetInt("godMode") == 1) {
+
+			Destroy(GameObject.Find("Heart_" + (healthCount - 1)));
+			healthCount--;
+		}
 	}
 
 	public void UpdateTimerUI() {
