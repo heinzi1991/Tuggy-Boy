@@ -21,3 +21,6 @@ The goal of every level is the collect all collectables, but there are also enem
 ## Requirements
 * Oculus Rift
 * XBOX 360 Controller
+
+## Short Video of the game
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MtHxPDz1r_M" frameborder="0" allowfullscreen></iframe>
