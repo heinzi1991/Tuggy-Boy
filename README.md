@@ -23,4 +23,4 @@ The goal of every level is the collect all collectables, but there are also enem
 * XBOX 360 Controller
 
 ## Short Video of the game
-[![Tuggy Boy Video](http://i.imgur.com/Ot5DWAW.png)](https://www.youtube.com/watch?v=MtHxPDz1r_M "Tuggy Boy")
+[![Tuggy Boy Video](https://github.com/heinzi1991/GDDII/blob/master/Images/Tuggy%20Boy.png)](https://www.youtube.com/watch?v=MtHxPDz1r_M "Tuggy Boy")
