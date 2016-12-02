@@ -19,8 +19,12 @@ The goal of every level is the collect all collectables, but there are also enem
 * Tobias Scheipel (https://github.com/toooooooo)
 
 ## Requirements
+* only for Windows
 * Oculus Rift
 * XBOX 360 Controller
+
+## Download the game
+If you wanna play this game, you must download the executable file (.exe)
 
 ## Short Video of the game
 [![Tuggy Boy Video](https://github.com/heinzi1991/GDDII/blob/master/Images/Tuggy%20Boy.png)](https://www.youtube.com/watch?v=MtHxPDz1r_M "Tuggy Boy")
