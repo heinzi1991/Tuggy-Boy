@@ -13,10 +13,10 @@ The goal of every level is the collect all collectables, but there are also enem
 
 ## Developers
 * Martin Zagar
-* Haris Ziko ()
-* Nicole Schuster ()
-* Patrick Seebacher ()
-* Tobias Scheipel ()
+* Haris Ziko (https://github.com/hearues-zueke-github)
+* Nicole Schuster (https://github.com/schusternicole)
+* Patrick Seebacher (https://github.com/Pfnetsch)
+* Tobias Scheipel (https://github.com/toooooooo)
 
 ## Requirements
 * Oculus Rift
