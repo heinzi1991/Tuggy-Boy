@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 8f19d3673eabc3848ba1ba42f7144d8a
+timeCreated: 1464110909
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DSC02813_JPG
+    100002: DSC02814_JPG
+    100004: DSC02815_JPG
+    100006: DSC02816_JPG
+    100008: DSC02817_JPG
+    100010: DSC02818_JPG
+    100012: DSC02819_JPG
+    100014: DSC02820_JPG
+    100016: DSC02821_JPG
+    100018: DSC02822_JPG
+    100020: DSC02823_JPG
+    100022: DSC02824_JPG
+    100024: DSC02825_JPG
+    100026: DSC02826_JPG
+    100028: DSC02827_JPG
+    100030: DSC02828_JPG
+    100032: DSC02829_JPG
+    100034: DSC02830_JPG
+    100036: DSC02831_JPG
+    100038: DSC02832_JPG
+    100040: DSC02833_JPG
+    100042: DSC02834_JPG
+    100044: DSC02835_JPG
+    100046: DSC02836_JPG
+    100048: DSC02837_JPG
+    100050: DSC02838_JPG
+    100052: DSC02839_JPG
+    100054: DSC02840_JPG
+    100056: DSC02841_JPG
+    100058: DSC02842_JPG
+    100060: DSC02845_JPG
+    100062: DSC02846_JPG
+    100064: DSC02847_JPG
+    100066: DSC02848_JPG
+    100068: DSC02849_JPG
+    100070: DSC02850_JPG
+    100072: DSC02851_JPG
+    100074: //RootNode
+    100076: mainMeshNode
+    400000: DSC02813_JPG
+    400002: DSC02814_JPG
+    400004: DSC02815_JPG
+    400006: DSC02816_JPG
+    400008: DSC02817_JPG
+    400010: DSC02818_JPG
+    400012: DSC02819_JPG
+    400014: DSC02820_JPG
+    400016: DSC02821_JPG
+    400018: DSC02822_JPG
+    400020: DSC02823_JPG
+    400022: DSC02824_JPG
+    400024: DSC02825_JPG
+    400026: DSC02826_JPG
+    400028: DSC02827_JPG
+    400030: DSC02828_JPG
+    400032: DSC02829_JPG
+    400034: DSC02830_JPG
+    400036: DSC02831_JPG
+    400038: DSC02832_JPG
+    400040: DSC02833_JPG
+    400042: DSC02834_JPG
+    400044: DSC02835_JPG
+    400046: DSC02836_JPG
+    400048: DSC02837_JPG
+    400050: DSC02838_JPG
+    400052: DSC02839_JPG
+    400054: DSC02840_JPG
+    400056: DSC02841_JPG
+    400058: DSC02842_JPG
+    400060: DSC02845_JPG
+    400062: DSC02846_JPG
+    400064: DSC02847_JPG
+    400066: DSC02848_JPG
+    400068: DSC02849_JPG
+    400070: DSC02850_JPG
+    400072: DSC02851_JPG
+    400074: //RootNode
+    400076: mainMeshNode
+    2300000: mainMeshNode
+    3300000: mainMeshNode
+    4300000: mainMeshNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.05
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 8a3c6a5c8f175a544b535e25549f23b0
+timeCreated: 1467806787
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Array
+    100002: bar_1
+    100004: bar_2
+    100006: bar_3
+    100008: bar_4
+    100010: Bottom
+    100012: CINEMA_4D_Editor
+    100014: "Deckfl\xE4che_1"
+    100016: "Deckfl\xE4che_1_2"
+    100018: "Deckfl\xE4che_1_3"
+    100020: "Deckfl\xE4che_1_4"
+    100022: "Deckfl\xE4che_1_5"
+    100024: "Deckfl\xE4che_1_6"
+    100026: "Deckfl\xE4che_1_7"
+    100028: "Deckfl\xE4che_2"
+    100030: "Deckfl\xE4che_2_2"
+    100032: "Deckfl\xE4che_2_3"
+    100034: "Deckfl\xE4che_2_4"
+    100036: "Deckfl\xE4che_2_5"
+    100038: "Deckfl\xE4che_2_6"
+    100040: "Deckfl\xE4che_2_7"
+    100042: //RootNode
+    100044: Loft
+    100046: Rundung_1
+    100048: Rundung_1_2
+    100050: Rundung_2
+    100052: Rundung_2_2
+    100054: Top
+    400000: Array
+    400002: bar_1
+    400004: bar_2
+    400006: bar_3
+    400008: bar_4
+    400010: Bottom
+    400012: CINEMA_4D_Editor
+    400014: "Deckfl\xE4che_1"
+    400016: "Deckfl\xE4che_1_2"
+    400018: "Deckfl\xE4che_1_3"
+    400020: "Deckfl\xE4che_1_4"
+    400022: "Deckfl\xE4che_1_5"
+    400024: "Deckfl\xE4che_1_6"
+    400026: "Deckfl\xE4che_1_7"
+    400028: "Deckfl\xE4che_2"
+    400030: "Deckfl\xE4che_2_2"
+    400032: "Deckfl\xE4che_2_3"
+    400034: "Deckfl\xE4che_2_4"
+    400036: "Deckfl\xE4che_2_5"
+    400038: "Deckfl\xE4che_2_6"
+    400040: "Deckfl\xE4che_2_7"
+    400042: //RootNode
+    400044: Loft
+    400046: Rundung_1
+    400048: Rundung_1_2
+    400050: Rundung_2
+    400052: Rundung_2_2
+    400054: Top
+    2300000: bar_1
+    2300002: bar_2
+    2300004: bar_3
+    2300006: bar_4
+    2300008: Bottom
+    2300010: "Deckfl\xE4che_1"
+    2300012: "Deckfl\xE4che_1_2"
+    2300014: "Deckfl\xE4che_1_3"
+    2300016: "Deckfl\xE4che_1_4"
+    2300018: "Deckfl\xE4che_1_5"
+    2300020: "Deckfl\xE4che_1_6"
+    2300022: "Deckfl\xE4che_1_7"
+    2300024: "Deckfl\xE4che_2"
+    2300026: "Deckfl\xE4che_2_2"
+    2300028: "Deckfl\xE4che_2_3"
+    2300030: "Deckfl\xE4che_2_4"
+    2300032: "Deckfl\xE4che_2_5"
+    2300034: "Deckfl\xE4che_2_6"
+    2300036: "Deckfl\xE4che_2_7"
+    2300038: Loft
+    2300040: Rundung_1
+    2300042: Rundung_1_2
+    2300044: Rundung_2
+    2300046: Rundung_2_2
+    2300048: Top
+    3300000: bar_1
+    3300002: bar_2
+    3300004: bar_3
+    3300006: bar_4
+    3300008: Bottom
+    3300010: "Deckfl\xE4che_1"
+    3300012: "Deckfl\xE4che_1_2"
+    3300014: "Deckfl\xE4che_1_3"
+    3300016: "Deckfl\xE4che_1_4"
+    3300018: "Deckfl\xE4che_1_5"
+    3300020: "Deckfl\xE4che_1_6"
+    3300022: "Deckfl\xE4che_1_7"
+    3300024: "Deckfl\xE4che_2"
+    3300026: "Deckfl\xE4che_2_2"
+    3300028: "Deckfl\xE4che_2_3"
+    3300030: "Deckfl\xE4che_2_4"
+    3300032: "Deckfl\xE4che_2_5"
+    3300034: "Deckfl\xE4che_2_6"
+    3300036: "Deckfl\xE4che_2_7"
+    3300038: Loft
+    3300040: Rundung_1
+    3300042: Rundung_1_2
+    3300044: Rundung_2
+    3300046: Rundung_2_2
+    3300048: Top
+    4300000: bar_4
+    4300002: "Deckfl\xE4che_1"
+    4300004: "Deckfl\xE4che_2"
+    4300006: bar_3
+    4300008: "Deckfl\xE4che_1_2"
+    4300010: "Deckfl\xE4che_2_2"
+    4300012: bar_2
+    4300014: "Deckfl\xE4che_1_3"
+    4300016: "Deckfl\xE4che_2_3"
+    4300018: bar_1
+    4300020: "Deckfl\xE4che_1_4"
+    4300022: "Deckfl\xE4che_2_4"
+    4300024: Loft
+    4300026: "Deckfl\xE4che_1_5"
+    4300028: "Deckfl\xE4che_2_5"
+    4300030: Bottom
+    4300032: Rundung_1
+    4300034: "Deckfl\xE4che_1_6"
+    4300036: Rundung_2
+    4300038: "Deckfl\xE4che_2_6"
+    4300040: Top
+    4300042: Rundung_1_2
+    4300044: "Deckfl\xE4che_1_7"
+    4300046: Rundung_2_2
+    4300048: "Deckfl\xE4che_2_7"
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.25
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
